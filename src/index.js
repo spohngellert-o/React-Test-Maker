@@ -63,19 +63,10 @@ class Test extends React.Component {
 }
 
 class Question extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-        question: props.question,
-        answers: props.answers,
-        correctAnswer: props.correctAnswer,
-        questionID: props.questionID
-    }
-  }
 
   render() {
-    const answers = this.state.answers;
-    const question = this.state.question;
+    const answers = this.props.answers;
+    const question = this.props.question;
     return (
       <div>
         <h3>{question}</h3>
