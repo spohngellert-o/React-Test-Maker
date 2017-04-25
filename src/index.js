@@ -32,11 +32,14 @@ class Test extends React.Component {
   addAnswer(questionIndex) {
     var questions = this.state.questions.slice();
     var currQuestion = questions[questionIndex];
-    currQuestion.answers.concat({answer: "", answerID: currQuestion.IDCounter});
+    console.log(currQuestion.answers.length);
+    currQuestion.answers = currQuestion.answers.concat({answer: "", answerID: currQuestion.IDCounter});
     currQuestion.IDCounter = currQuestion.IDCounter + 1;
+    console.log(currQuestion.answers.length);
     this.setState(currState => {
       questions: questions;
-    })
+    });
+    console.log(this.state.questions[0].answers.length);
   }
 
   renderQuestion(question, index) {
